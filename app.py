@@ -284,5 +284,5 @@ def download_file(filename):
     return send_from_directory(RESULTS_FOLDER, filename, as_attachment=True)
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))  # Get PORT from environment
+    port = int(os.environ.get('PORT', 10000))  # Get PORT from environment
     app.run(host='0.0.0.0', port=port)
