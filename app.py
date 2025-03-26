@@ -18,6 +18,10 @@ from flask import Flask, render_template, request, redirect, url_for, flash, sen
 # Import the question extraction functionality
 from pdf_to_questions import convert_pdf_to_images, extract_text_with_gemini, extract_questions_with_gemini
 from pdf_to_questions import improve_questions, process_pdf_page
+from flask import Flask, jsonify
+from flask_cors import CORS
+
+
 
 # Configure logging
 logging.basicConfig(
@@ -28,6 +32,7 @@ logging.basicConfig(
 
 # Initialize Flask app
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 app.secret_key = os.urandom(24)
 
 # Create upload and results directories
